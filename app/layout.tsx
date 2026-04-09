@@ -1,27 +1,34 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Noto_Sans_JP, Inter } from 'next/font/google'
+import { Barlow_Condensed, IBM_Plex_Sans, Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-plus-jakarta',
+  variable: '--font-barlow-condensed',
+  display: 'swap',
+})
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-ibm-plex',
   display: 'swap',
 })
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
+  weight: ['400', '500', '700'],
   variable: '--font-noto-sans',
   display: 'swap',
 })
 
-const inter = Inter({
+const notoSerifJP = Noto_Serif_JP({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-inter',
+  weight: ['400', '600', '700', '900'],
+  variable: '--font-noto-serif',
   display: 'swap',
 })
 
@@ -38,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${plusJakartaSans.variable} ${notoSansJP.variable} ${inter.variable} scroll-smooth`}
+      className={`${barlowCondensed.variable} ${ibmPlexSans.variable} ${notoSansJP.variable} ${notoSerifJP.variable} scroll-smooth`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
