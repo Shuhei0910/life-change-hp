@@ -1,65 +1,375 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Home() {
+const services = [
+  {
+    icon: 'ac_unit',
+    title: 'エアコン取付',
+    desc: '家庭用・業務用の各種エアコンの新規設置、移設、撤去を承ります。',
+    href: '/service/aircon',
+  },
+  {
+    icon: 'hot_tub',
+    title: '給湯器取付',
+    desc: 'ガス・電気給湯器の交換・新設。エコジョーズ等の最新機種もお任せください。',
+    href: '/service/kyutoki',
+  },
+  {
+    icon: 'cooking',
+    title: 'コンロ取付',
+    desc: 'ビルトインガスコンロ、IHクッキングヒーターの安全な交換工事を行います。',
+    href: '/service/conro',
+  },
+  {
+    icon: 'construction',
+    title: 'その他工事',
+    desc: '換気扇交換やアンテナ工事、小規模な電気工事まで幅広く対応可能です。',
+    href: '/service/other',
+  },
+]
+
+const works = [
+  { src: '/images/works-grid-01.jpg', alt: 'エアコン取付施工事例', city: '松戸市', label: 'エアコン取付' },
+  { src: '/images/works-grid-02.jpg', alt: '給湯器交換施工事例', city: '流山市', label: '給湯器交換' },
+  { src: '/images/works-grid-03.jpg', alt: 'コンロ取付施工事例', city: '柏市', label: 'コンロ取付' },
+]
+
+const areas = [
+  { city: '松戸市', en: 'Matsudo City' },
+  { city: '流山市', en: 'Nagareyama City' },
+  { city: '柏市', en: 'Kashiwa City' },
+]
+
+const reviews = [
+  {
+    text: '「エアコンの取り付けをお願いしました。作業がとても丁寧で、説明も分かりやすかったです。また何かあればお願いしたいです。」',
+    name: '松戸市 K様',
+  },
+  {
+    text: '「急な給湯器の故障で困っていましたが、迅速に対応していただき助かりました。当日に見積もりから工事まで完了しました。」',
+    name: '流山市 S様',
+  },
+  {
+    text: '「コンロの交換をお願いしました。養生もしっかりしていて、後片付けも綺麗で感動しました。信頼できる業者さんです。」',
+    name: '柏市 M様',
+  },
+]
+
+const faqs = [
+  {
+    q: '見積もりは無料ですか？',
+    a: 'はい、現地調査およびお見積もりは完全に無料で承っております。お気軽にお問い合わせください。',
+  },
+  {
+    q: '工事の保証はありますか？',
+    a: 'はい、施工内容に応じて独自の工事保証を設けております。万が一の際も責任を持って対応いたします。',
+  },
+  {
+    q: 'ネットで購入した製品の取り付けも可能ですか？',
+    a: 'はい、承っております。製品の型番や設置場所の詳細をお伺いできればお見積もりいたします。',
+  },
+  {
+    q: '土日祝日も対応していますか？',
+    a: 'はい、土日祝日も営業しております。ただし、予約状況によりご希望に添えない場合がございますのでお早めにご相談ください。',
+  },
+  {
+    q: '支払方法は何がありますか？',
+    a: '現金、各種クレジットカード、銀行振込に対応しております。',
+  },
+]
+
+const instagramImages = [
+  { src: '/images/instagram-01.jpg', alt: 'エアコン施工事例1' },
+  { src: '/images/instagram-02.jpg', alt: 'エアコン施工事例2' },
+  { src: '/images/instagram-03.jpg', alt: 'コンロ施工事例' },
+  { src: '/images/instagram-04.jpg', alt: '配管施工事例' },
+  { src: '/images/instagram-05.jpg', alt: '施工事例5' },
+  { src: '/images/instagram-06.jpg', alt: '給湯器施工事例' },
+]
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* ── Hero ── */}
+      <section className="relative h-[820px] md:h-[921px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-top.jpg"
+            alt="エアコン工事中の日本人技術者"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6 font-headline text-shadow-premium">
+              エアコン・給湯器取付は、
+              <br />
+              <span className="text-secondary-container">ライフチェンジ</span>
+              にお任せ。
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-10 font-medium tracking-wide">
+              松戸市・流山市・柏市対応 ｜ 年間4,000台以上の施工実績
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contact"
+                className="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-bold text-center text-lg hover:brightness-110 transition-all shadow-xl"
+              >
+                無料で見積もり依頼
+              </Link>
+              <a
+                href="tel:050-5536-8619"
+                className="bg-primary-container text-on-primary px-8 py-4 rounded-xl font-bold text-center text-lg hover:bg-opacity-90 transition-all border border-white/10 backdrop-blur-sm flex items-center justify-center gap-2"
+              >
+                <span className="material-symbols-outlined">call</span>
+                050-5536-8619
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Stats Bar ── */}
+      <section className="bg-surface-container-lowest relative z-20 -mt-12 mx-4 md:mx-auto max-w-5xl rounded-xl shadow-2xl overflow-hidden">
+        <div className="grid grid-cols-2 md:grid-cols-4 py-8 px-4">
+          {[
+            { label: '年間施工台数', value: '4,000台', unit: '以上' },
+            { label: '対応エリア', value: '3市', unit: '' },
+            { label: '創業', value: '2020年', unit: '' },
+            { label: '保有資格', value: '複数', unit: '' },
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className="text-center border-r-0 md:border-r border-outline-variant/30 last:border-0 py-4"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <div className="text-xs text-on-primary-container mb-1 font-label">
+                {stat.label}
+              </div>
+              <div className="text-2xl md:text-3xl font-black text-primary font-headline">
+                {stat.value}
+                {stat.unit && (
+                  <span className="text-sm font-bold ml-1 text-secondary-container">
+                    {stat.unit}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Services ── */}
+      <section className="py-24 px-8 max-w-7xl mx-auto">
+        <div className="mb-16">
+          <span className="text-secondary-container font-black tracking-widest text-sm uppercase block mb-4 font-label">
+            OUR SERVICES
+          </span>
+          <h2 className="text-4xl font-black text-primary font-headline mb-4 leading-tight">
+            暮らしを支える、確かな技術。
+          </h2>
+          <p className="text-on-surface-variant leading-relaxed max-w-xl">
+            私たちはエアコンや給湯器の設置を通じて、お客様の快適な暮らしをサポートします。
+            技術力とスピードに自信があります。
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="group bg-surface-container-lowest p-8 rounded-xl hover:bg-primary transition-all duration-500 hover:shadow-2xl"
+            >
+              <div className="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary-container transition-colors">
+                <span className="material-symbols-outlined text-primary group-hover:text-on-secondary-container">
+                  {s.icon}
+                </span>
+              </div>
+              <h3 className="text-xl font-bold text-primary group-hover:text-white mb-4">
+                {s.title}
+              </h3>
+              <p className="text-on-surface-variant group-hover:text-white/80 text-sm mb-8 leading-relaxed">
+                {s.desc}
+              </p>
+              <Link
+                href={s.href}
+                className="inline-flex items-center text-secondary-container font-bold group-hover:text-white transition-colors"
+              >
+                詳しく見る
+                <span className="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+              </Link>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* ── Works Grid ── */}
+      <section className="bg-surface-container-low py-24">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-4xl font-black text-primary font-headline mb-12 text-center">
+            最新の施工事例
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {works.map((w) => (
+              <div key={w.label} className="aspect-square relative group overflow-hidden rounded-xl">
+                <Image
+                  src={w.src}
+                  alt={w.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="text-white font-bold">
+                    {w.label}（{w.city}）
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              href="/works"
+              className="bg-white text-primary border border-primary/10 px-8 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all inline-block"
+            >
+              すべての施工実績を見る
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Area ── */}
+      <section className="py-24 px-8 max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl font-black text-primary font-headline mb-4">対応エリア</h2>
+        <p className="text-on-surface-variant mb-16">
+          千葉県北西部を中心に、地域密着でスピーディーに対応いたします。
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {areas.map((a) => (
+            <div key={a.city} className="flex flex-col items-center">
+              <div className="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center mb-6">
+                <span className="material-symbols-outlined text-primary text-3xl">location_on</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">{a.city}</h3>
+              <p className="text-sm text-on-surface-variant">{a.en}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Reviews ── */}
+      <section className="py-24 bg-primary text-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-4xl font-black font-headline mb-16 text-center">
+            お客様の声
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {reviews.map((r) => (
+              <div key={r.name} className="bg-primary-container p-8 rounded-xl">
+                <div className="flex text-orange-400 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span
+                      key={i}
+                      className="material-symbols-outlined"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      star
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed mb-6">{r.text}</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white/20" />
+                  <span className="text-sm font-bold">{r.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-24 px-8 max-w-4xl mx-auto">
+        <h2 className="text-4xl font-black text-primary font-headline mb-12 text-center">
+          よくあるご質問
+        </h2>
+        <div className="space-y-4">
+          {faqs.map((faq) => (
+            <details key={faq.q} className="group bg-surface-container-low rounded-xl">
+              <summary className="flex justify-between items-center p-6 cursor-pointer font-bold list-none text-primary">
+                {faq.q}
+                <span className="material-symbols-outlined group-open:rotate-180 transition-transform flex-shrink-0">
+                  expand_more
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-on-surface-variant leading-relaxed">
+                {faq.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Instagram ── */}
+      <section className="py-24 bg-surface-container-lowest">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex items-center justify-between mb-12">
+            <h2 className="text-3xl font-black text-primary font-headline">Instagram</h2>
+            <a
+              href="https://www.instagram.com/tokunaga10933333"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary-container font-bold flex items-center gap-1"
+            >
+              @tokunaga10933333
+              <span className="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
+            {instagramImages.map((img) => (
+              <div key={img.src} className="aspect-square overflow-hidden rounded-lg relative">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Contact CTA ── */}
+      <section className="bg-primary text-white py-24 px-8 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-black font-headline mb-6">
+            お困りごとは今すぐ解決。
+          </h2>
+          <p className="text-xl text-white/80 mb-12">
+            お見積もりから施工まで、スピーディーに対応いたします。
+          </p>
+          <div className="bg-primary-container p-10 rounded-xl border border-white/5 shadow-2xl mb-12">
+            <div className="mb-4 text-secondary-container font-bold text-sm">
+              お電話でのご相談はこちら
+            </div>
+            <a
+              href="tel:050-5536-8619"
+              className="block text-4xl md:text-6xl font-black font-headline mb-4 tracking-tighter hover:text-secondary-container transition-colors"
+            >
+              050-5536-8619
+            </a>
+            <div className="text-white/60 text-sm">受付時間 9:00〜17:00（日曜休）</div>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 bg-secondary-container text-on-secondary-container px-12 py-5 rounded-xl font-black text-xl hover:brightness-110 transition-all shadow-lg"
+          >
+            <span className="material-symbols-outlined">mail</span>
+            メールで問い合わせる
+          </Link>
+        </div>
+      </section>
+    </>
+  )
 }
