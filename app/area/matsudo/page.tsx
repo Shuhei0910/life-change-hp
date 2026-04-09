@@ -58,8 +58,10 @@ export default function MatsudoPage() {
           <div>
             <h2 className="text-2xl font-black text-primary font-headline mb-3">拠点は松戸市大橋。だから早い。</h2>
             <p className="text-on-surface-variant leading-relaxed">
-              当社は松戸市大橋に拠点があります。松戸市内の現場へは最短で駆けつけられるため、
-              緊急の給湯器トラブルや引越し当日のエアコン取付にも最短当日対応が可能です。
+              当社は松戸市大橋に拠点があります。<br />
+              松戸市内の現場へは最短で駆けつけられるため、<br />
+              緊急の給湯器トラブルや引越し当日のエアコン取付にも<br className="md:hidden" />
+              最短当日対応が可能です。<br />
               地域を熟知したスタッフが対応します。
             </p>
           </div>

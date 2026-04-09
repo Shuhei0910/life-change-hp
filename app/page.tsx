@@ -199,7 +199,8 @@ export default function HomePage() {
             暮らしを支える、確かな技術。
           </h2>
           <p className="text-on-surface-variant leading-relaxed max-w-xl">
-            私たちはエアコンや給湯器の設置を通じて、お客様の快適な暮らしをサポートします。
+            私たちはエアコンや給湯器の設置を通じて、<br />
+            お客様の快適な暮らしをサポートします。<br />
             技術力とスピードに自信があります。
           </p>
         </div>

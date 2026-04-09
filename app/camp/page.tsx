@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -6,36 +7,36 @@ export const metadata: Metadata = {
   description: '千葉市若葉区にある「みんなの里山キャンプ場」。大焚き火・窯・オーナー手作りアスレチック・ドッグラン完備。ペットと過ごす癒しの空間。なっぷから予約受付中。',
 }
 
-const features = [
+const features: { icon: string; title: string; body: React.ReactNode }[] = [
   {
     icon: 'local_fire_department',
     title: '大焚き火',
-    body: '思いきり燃やせる大きな焚き火スペース。薪の販売もあり、夜まで炎を囲んで楽しめます。',
+    body: <>思いきり燃やせる大きな焚き火スペース。<br />薪の販売もあり、夜まで炎を囲んで楽しめます。</>,
   },
   {
     icon: 'outdoor_grill',
     title: '窯（ピザ焼き）',
-    body: 'オーナー自慢の窯でピザ焼き体験ができます。手作りの温かみが感じられる特別な体験を。',
+    body: <>オーナー自慢の窯でピザ焼き体験ができます。<br />手作りの温かみが感じられる特別な体験を。</>,
   },
   {
     icon: 'park',
     title: 'オーナー手作りアスレチック',
-    body: '愛情込めて手作りされたアスレチック。お子様が思いきり体を動かして遊べます。',
+    body: <>愛情込めて手作りされたアスレチック。<br />お子様が思いきり体を動かして遊べます。</>,
   },
   {
     icon: 'pets',
     title: 'ドッグラン（整備中）',
-    body: '愛犬と一緒に楽しめるドッグランを整備中です。ペットと過ごす癒しの空間をご用意しています。',
+    body: <>愛犬と一緒に楽しめるドッグランを整備中です。<br />ペットと過ごす癒しの空間をご用意しています。</>,
   },
   {
     icon: 'hot_tub',
     title: 'サウナ＆プール（イベント時）',
-    body: '特定イベント時にはサウナ＆プールもオープン。詳しくはInstagramをご確認ください。',
+    body: <>特定イベント時にはサウナ＆プールもオープン。<br />詳しくはInstagramをご確認ください。</>,
   },
   {
     icon: 'electrical_services',
     title: 'オートサイト（電源付き）',
-    body: '電源付きオートサイトは20A・30Aに対応。電気毛布や家電も使えて快適に過ごせます。',
+    body: <>電源付きオートサイトは20A・30Aに対応。<br />電気毛布や家電も使えて快適に過ごせます。</>,
   },
 ]
 
@@ -195,7 +196,8 @@ export default function CampPage() {
               <h2 className="text-3xl font-black font-headline mb-3">ご予約・お問い合わせ</h2>
               <p className="text-white/70 leading-relaxed">
                 ご予約は「なっぷ」サイトより受け付けています。<br />
-                詳細・ご不明点はお電話またはInstagramのDMにてお気軽にご連絡ください。
+                詳細・ご不明点はお電話またはInstagramのDMにて<br />
+                お気軽にご連絡ください。
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">

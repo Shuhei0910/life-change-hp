@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -17,26 +18,26 @@ const companyInfo = [
   { label: '年間施工実績', value: '4,000台以上' },
 ]
 
-const strengths = [
+const strengths: { icon: string; title: string; body: React.ReactNode }[] = [
   {
     icon: 'verified',
     title: '有資格のプロが施工',
-    body: '第二種電気工事士・給水装置工事主任技術者など国家資格保有者が責任を持って施工します。無資格業者に多い施工不良・事故のリスクがありません。',
+    body: <>第二種電気工事士・給水装置工事主任技術者など<br />国家資格保有者が責任を持って施工します。<br />無資格業者に多い施工不良・事故のリスクがありません。</>,
   },
   {
     icon: 'schedule',
     title: '最短当日対応',
-    body: 'ご連絡いただいてから最短当日の施工が可能です。引越し当日のエアコン設置や、給湯器の突然の故障にも素早く対応します。',
+    body: <>ご連絡いただいてから最短当日の施工が可能です。<br />引越し当日のエアコン設置や、給湯器の突然の故障にも<br className="md:hidden" />素早く対応します。</>,
   },
   {
     icon: 'receipt_long',
     title: '明朗会計',
-    body: '施工前に明確なお見積もりをご提示します。追加費用が発生する場合は必ず事前にご説明し、ご了承いただいてから作業を進めます。',
+    body: <>施工前に明確なお見積もりをご提示します。<br />追加費用が発生する場合は必ず事前にご説明し、<br className="md:hidden" />ご了承いただいてから作業を進めます。</>,
   },
   {
     icon: 'recycling',
     title: '旧機器の処分もワンストップ',
-    body: '古いエアコン・給湯器の取外しから処分まで一括対応します。処分業者への手配など余計な手間がかかりません。',
+    body: <>古いエアコン・給湯器の取外しから処分まで<br />一括対応します。<br />処分業者への手配など余計な手間がかかりません。</>,
   },
 ]
 
@@ -54,8 +55,10 @@ export default function AboutPage() {
               会社概要
             </h1>
             <p className="text-on-primary-container text-lg leading-relaxed max-w-xl">
-              千葉県松戸市を拠点に、エアコン・給湯器・コンロの住宅設備工事を専門とする会社です。
-              年間4,000台を超える施工実績と、有資格プロによる確かな技術でご家庭の快適を支えます。
+              千葉県松戸市を拠点に、エアコン・給湯器・コンロの<br />
+              住宅設備工事を専門とする会社です。<br />
+              年間4,000台を超える施工実績と、有資格プロによる<br className="md:hidden" />
+              確かな技術でご家庭の快適を支えます。
             </p>
           </div>
         </div>
@@ -121,7 +124,8 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-black font-headline mb-3">保有資格・許可</h2>
             <p className="text-on-primary-container leading-relaxed max-w-lg">
-              当社スタッフが保有する国家資格・許認可の一覧をご確認いただけます。
+              当社スタッフが保有する国家資格・許認可の一覧を<br />
+              ご確認いただけます。<br />
               安心してお任せいただける根拠をご覧ください。
             </p>
           </div>

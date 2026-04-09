@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -6,6 +7,24 @@ export const metadata: Metadata = {
   title: 'エアコン取付・取外し | 合同会社ライフチェンジ',
   description: '松戸市・流山市・柏市のエアコン取付・取外しは合同会社ライフチェンジへ。2.2kW以下¥18,480〜。第二種電気工事士による確実な施工。最短当日対応。',
 }
+
+const whyUs: { icon: string; title: string; body: React.ReactNode }[] = [
+  {
+    icon: 'verified',
+    title: '有資格プロによる施工',
+    body: <>第二種電気工事士・第一種冷媒フロン類取扱技術者が施工。<br />無資格業者に多い施工不良・ガス漏れのリスクがありません。</>,
+  },
+  {
+    icon: 'speed',
+    title: '最短当日対応',
+    body: <>引越し当日のエアコン設置や急な故障にも対応。<br />松戸市大橋拠点から迅速に駆けつけます。</>,
+  },
+  {
+    icon: 'recycling',
+    title: '旧機撤去・処分もワンストップ',
+    body: <>古いエアコンの取外しから処分まで一括対応。<br />フロン回収も適切に処理します。</>,
+  },
+]
 
 const standardPrices = [
   {
@@ -104,8 +123,8 @@ export default function AirconPage() {
               職人の技術。
             </h1>
             <p className="text-white/90 text-lg mb-10 max-w-lg leading-relaxed">
-              合同会社ライフチェンジは、住環境の美観と機能を追求した
-              建築的視点でのエアコン設置をご提案します。
+              合同会社ライフチェンジは、住環境の美観と機能を追求した<br />
+              建築的視点でのエアコン設置をご提案します。<br />
               第二種電気工事士が責任を持って施工します。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -262,23 +281,7 @@ export default function AirconPage() {
             <h2 className="text-4xl font-black font-headline">選ばれる理由</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20">
-            {[
-              {
-                icon: 'verified',
-                title: '有資格プロによる施工',
-                body: '第二種電気工事士・第一種冷媒フロン類取扱技術者が施工。無資格業者に多い施工不良・ガス漏れのリスクがありません。',
-              },
-              {
-                icon: 'speed',
-                title: '最短当日対応',
-                body: '引越し当日のエアコン設置や急な故障にも対応。松戸市大橋拠点から迅速に駆けつけます。',
-              },
-              {
-                icon: 'recycling',
-                title: '旧機撤去・処分もワンストップ',
-                body: '古いエアコンの取外しから処分まで一括対応。フロン回収も適切に処理します。',
-              },
-            ].map((item, i) => (
+            {whyUs.map((item, i) => (
               <div key={i} className="bg-surface-container-lowest p-10">
                 <span
                   className="material-symbols-outlined text-3xl text-secondary-container mb-6 block"

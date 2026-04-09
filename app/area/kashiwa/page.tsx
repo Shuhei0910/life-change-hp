@@ -58,8 +58,10 @@ export default function KashiwaPage() {
           <div>
             <h2 className="text-2xl font-black text-primary font-headline mb-3">柏市全域をカバーする施工体制</h2>
             <p className="text-on-surface-variant leading-relaxed">
-              松戸市から柏市方面へのアクセスも良好です。柏市内のご依頼も日々対応しています。
-              給湯器の緊急対応や、引越しシーズンのエアコン一斉設置など、柏市のお客様からも多数ご依頼をいただいています。
+              松戸市から柏市方面へのアクセスも良好です。<br />
+              柏市内のご依頼も日々対応しています。<br />
+              給湯器の緊急対応や、引越しシーズンのエアコン一斉設置など、<br />
+              柏市のお客様からも多数ご依頼をいただいています。
             </p>
           </div>
         </section>

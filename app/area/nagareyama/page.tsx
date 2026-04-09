@@ -58,8 +58,9 @@ export default function NagareyamaPage() {
           <div>
             <h2 className="text-2xl font-black text-primary font-headline mb-3">松戸市から流山市へ。スムーズに対応。</h2>
             <p className="text-on-surface-variant leading-relaxed">
-              当社は松戸市大橋に拠点があり、流山市内も通常30分以内に到着できます。
-              新興住宅地が増えた流山おおたかの森エリアのご新居への設置も多数実績があります。
+              当社は松戸市大橋に拠点があり、流山市内も通常30分以内に到着できます。<br />
+              新興住宅地が増えた流山おおたかの森エリアのご新居への設置も<br />
+              多数実績があります。<br />
               引越し・新生活の設備工事もお任せください。
             </p>
           </div>

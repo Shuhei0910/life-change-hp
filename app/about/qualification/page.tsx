@@ -60,7 +60,7 @@ export default function QualificationPage() {
             保有資格・許可
           </h1>
           <p className="text-on-primary-container max-w-xl leading-relaxed">
-            有資格のプロが責任を持って施工するから安心です。
+            有資格のプロが責任を持って施工するから安心です。<br />
             当社スタッフの保有資格・許認可をご確認ください。
           </p>
         </div>

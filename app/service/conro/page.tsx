@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -7,21 +8,21 @@ export const metadata: Metadata = {
   description: '松戸市・流山市・柏市のガスコンロ・IHクッキングヒーター取付は合同会社ライフチェンジへ。¥13,200〜。電気工事士による安全施工。',
 }
 
-const features = [
+const features: { icon: string; title: string; body: React.ReactNode }[] = [
   {
     icon: 'electrical_services',
     title: '電気工事士による安全施工',
-    body: 'IHクッキングヒーターの設置には専用200V回路が必要です。第二種電気工事士がワンストップで対応します。',
+    body: <>IHクッキングヒーターの設置には専用200V回路が必要です。<br />第二種電気工事士がワンストップで対応します。</>,
   },
   {
     icon: 'local_gas_station',
     title: 'ガス・IH両方に対応',
-    body: 'ガスコンロの交換はもちろん、ガス→IH、IH→ガスのきり替え工事も承ります。',
+    body: <>ガスコンロの交換はもちろん、ガス→IH、IH→ガスの<br />きり替え工事も承ります。</>,
   },
   {
     icon: 'clean_hands',
     title: 'ビルトインも据置きも',
-    body: 'システムキッチンへのビルトインコンロ交換から、据置き型ガステーブルの設置まで対応します。',
+    body: <>システムキッチンへのビルトインコンロ交換から、<br />据置き型ガステーブルの設置まで対応します。</>,
   },
 ]
 

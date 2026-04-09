@@ -21,7 +21,9 @@ export default function ContactPage() {
               お問い合わせ
             </h1>
             <p className="text-on-primary-container text-lg max-w-xl leading-relaxed">
-              住まいのこと、リフォームのご相談、お見積もりのご依頼など、どのようなことでもお気軽にご相談ください。専門スタッフが丁寧にお答えいたします。
+              住まいのこと、リフォームのご相談、お見積もりのご依頼など、<br />
+              どのようなことでもお気軽にご相談ください。<br />
+              専門スタッフが丁寧にお答えいたします。
             </p>
           </div>
         </div>

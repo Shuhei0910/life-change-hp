@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -7,21 +8,21 @@ export const metadata: Metadata = {
   description: '松戸市・流山市・柏市の給湯器交換・取付は合同会社ライフチェンジへ。最短当日対応。給水装置工事主任技術者による確実な施工。¥55,000〜',
 }
 
-const features = [
+const features: { icon: string; title: string; body: React.ReactNode }[] = [
   {
     icon: 'speed',
     title: '最短当日対応',
-    body: '突然のお湯が出ない・給湯器の故障も最短当日に対応します。緊急時もお気軽にご連絡ください。',
+    body: <>突然のお湯が出ない・給湯器の故障も最短当日に対応します。<br />緊急時もお気軽にご連絡ください。</>,
   },
   {
     icon: 'verified_user',
     title: '資格保有スタッフによる施工',
-    body: '給水装置工事主任技術者・ガス可とう管接続工事監督者が正確・安全に施工します。',
+    body: <>給水装置工事主任技術者・ガス可とう管接続工事監督者が<br />正確・安全に施工します。</>,
   },
   {
     icon: 'handshake',
     title: 'メーカー取引実績多数',
-    body: 'リンナイ・ノーリツ・パロマなど主要メーカーの機器を適切な価格で手配・設置します。',
+    body: <>リンナイ・ノーリツ・パロマなど主要メーカーの機器を<br />適切な価格で手配・設置します。</>,
   },
 ]
 

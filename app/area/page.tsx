@@ -100,8 +100,9 @@ export default function AreaPage() {
             <div>
               <h2 className="text-3xl font-black text-primary font-headline mb-4">千葉県全域・東京都一部にも対応</h2>
               <p className="text-on-surface-variant leading-relaxed mb-6">
-                上記3市以外のエリアも対応できる場合があります。
-                出張費が異なる場合がありますが、まずはお電話またはお問い合わせフォームでご確認ください。
+                上記3市以外のエリアも対応できる場合があります。<br />
+                出張費が異なる場合がありますが、まずはお電話または<br />
+                お問い合わせフォームでご確認ください。
               </p>
               <div className="space-y-3">
                 {['市川市', '船橋市', '鎌ヶ谷市', '我孫子市', '野田市', '東京都北東部エリア'].map((city) => (
