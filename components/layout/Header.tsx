@@ -20,7 +20,7 @@ export default function Header() {
           href="/"
           className="text-xl font-black text-primary tracking-tighter font-headline"
         >
-          ライフチェンジ株式会社
+          合同会社ライフチェンジ
         </Link>
 
         {/* Desktop nav */}

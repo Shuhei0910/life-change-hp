@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 max-w-7xl mx-auto text-sm leading-relaxed">
         <div className="space-y-6">
           <div className="text-lg font-bold text-secondary-container font-headline">
-            ライフチェンジ株式会社
+            合同会社ライフチェンジ
           </div>
           <p className="text-white/70">
             千葉県松戸市・流山市・柏市を中心に活動する住宅設備工事の専門会社です。

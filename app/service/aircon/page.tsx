@@ -3,256 +3,184 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'エアコン取付工事 | 合同会社ライフチェンジ',
-  description: '松戸市・流山市・柏市のエアコン取付はライフチェンジにお任せ。年間1,000件以上の施工実績。丁寧・迅速・明朗会計でお届けします。無料見積もり受付中。',
+  title: 'エアコン取付・取外し | 合同会社ライフチェンジ',
+  description: '松戸市・流山市・柏市のエアコン取付・取外しは合同会社ライフチェンジへ。2.2kW以下¥18,480〜。第二種電気工事士による確実な施工。最短当日対応。',
 }
 
-const reasons = [
+const standardPrices = [
   {
-    num: '01',
-    title: '地域密着のスピード対応',
-    desc: '松戸・流山エリアなら最短即日訪問。急な故障や引越し時の取付も柔軟に対応します。',
+    name: '2.2kW以下　エアコン標準取付',
+    note: '本体取付・同一階設置・配管4m・穴あけ1箇所・真空引き',
+    price: '18,480',
   },
   {
-    num: '02',
-    title: '完全自社施工の高品質',
-    desc: '下請けに丸投げせず、熟練の自社スタッフが施工。見えない配管裏まで美しく仕上げます。',
+    name: '2.5〜3.6kW　エアコン標準取付',
+    note: '本体取付・同一階設置・配管4m・穴あけ1箇所・真空引き',
+    price: '18,480',
   },
   {
-    num: '03',
-    title: '安心の長期工事保証',
-    desc: '施工後も安心してお使いいただけるよう、独自の工事保証をすべての案件に付帯。',
+    name: '4.0kW以上　エアコン標準取付',
+    note: '本体取付・同一階設置・配管4m・穴あけ1箇所・真空引き',
+    price: '21,780',
   },
 ]
 
-const steps = [
-  { icon: 'mail', step: '01', title: 'お問い合わせ', desc: 'お電話またはWebフォームよりご相談ください。' },
-  { icon: 'search', step: '02', title: '現地確認', desc: '専門スタッフが訪問し、設置環境を確認します。' },
-  { icon: 'build', step: '03', title: '工事', desc: 'ご希望の日時に合わせ、丁寧に施工いたします。', accent: true },
-  { icon: 'sentiment_satisfied', step: '04', title: '完了', desc: '動作確認後、お引渡し。アフターフォローもお任せ！' },
+const outdoorPrices = [
+  { name: '室外機　屋根置工事', note: '※雨雪時は工事不可', price: '14,300' },
+  { name: '室外機　壁面工事', note: '※地上1.5mまで・ALC/サイディング壁は不可', price: '14,300' },
+  { name: '室外機　天吊工事', note: '※埋め込みボルト必須', price: '14,300' },
+  { name: '室外機　二段置工事', note: '', price: '19,800' },
 ]
 
 const faqs = [
   {
-    q: '見積もりだけでも無料ですか？',
-    a: 'はい、現地調査およびお見積もりは完全に無料で承っております。お見積もり後にキャンセルいただいても費用は発生いたしませんので、お気軽にご相談ください。',
+    q: '見積もりは無料ですか？',
+    a: 'はい、現地調査およびお見積もりは無料で承っております。見積もり後にキャンセルされても費用は一切かかりません。お気軽にご相談ください。',
   },
   {
-    q: 'ネットで購入したエアコンも取り付けてもらえますか？',
-    a: 'もちろんです。通販サイト等で購入されたエアコンの持ち込み設置も大歓迎です。機種名をお知らせいただければ、よりスムーズにお見積もりが可能です。',
+    q: '他店で購入したエアコンの取り付けも可能ですか？',
+    a: '可能です。インターネット通販や量販店で購入された機器の持ち込み設置も喜んで承ります。型番をお知らせいただくとスムーズです。',
   },
   {
-    q: '工事の時間はどれくらいかかりますか？',
-    a: '標準的な取付工事であれば、1台あたり1.5時間〜2時間程度です。取り外し工事や化粧カバーの設置、特殊な壁面への穴あけ等がある場合はプラス30分〜1時間ほどお時間をいただく場合がございます。',
+    q: '工事にはどのくらいの時間がかかりますか？',
+    a: '標準工事であれば1台につき1.5〜2時間程度です。隠蔽配管・特殊設置場所・複数台の場合はさらにお時間をいただく場合がございます。',
+  },
+  {
+    q: '雨の日でも工事はできますか？',
+    a: '小雨程度であれば可能ですが、屋根上作業や真空引き作業に支障が出る場合は日程を調整させていただくことがございます。安全を最優先に判断します。',
   },
 ]
 
 export default function AirconPage() {
   return (
     <>
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'エアコン取付・取外し工事',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: '合同会社ライフチェンジ',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '大橋1108番地4',
+                addressLocality: '松戸市',
+                addressRegion: '千葉県',
+                postalCode: '270-2224',
+                addressCountry: 'JP',
+              },
+              telephone: '050-5536-8619',
+            },
+            description: '第二種電気工事士によるエアコン取付・取外し工事。2.2kW以下¥18,480〜。松戸市・流山市・柏市対応。',
+            areaServed: ['松戸市', '流山市', '柏市'],
+            priceRange: '¥18,480〜',
+          }),
+        }}
+      />
+
       {/* ── Hero ── */}
-      <header className="relative min-h-[700px] md:min-h-[819px] flex items-center pt-20 overflow-hidden">
+      <section className="relative h-[921px] min-h-[600px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-aircon.jpg"
-            alt="日本人技術者によるエアコン取付工事"
+            src="/images/aircon-hero.jpg"
+            alt="合同会社ライフチェンジのスタッフがエアコンを取り付けている様子"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+          <div className="absolute inset-0 bg-primary/40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-2xl">
-            <span className="inline-block py-1 px-4 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold mb-6 tracking-widest font-label">
-              AIR CONDITIONING SERVICE
+            <span className="font-label text-white text-sm font-bold tracking-[0.3em] block mb-4 uppercase">
+              Service: Air Conditioner Installation
             </span>
-            <h1 className="text-5xl md:text-7xl font-headline font-black text-white leading-tight mb-8 text-shadow-premium">
-              快適な空気を、
-              <br />
-              確かな技術で。
+            <h1 className="text-white text-5xl md:text-7xl font-black font-headline leading-tight mb-8">
+              空間を整える、<br />
+              職人の技術。
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed mb-10 font-medium">
-              松戸市・流山市を中心に、年間1,000件以上の施工実績。
-              <br />
-              ライフチェンジは「丁寧・迅速・明朗会計」を約束します。
+            <p className="text-white/90 text-lg mb-10 max-w-lg leading-relaxed">
+              合同会社ライフチェンジは、住環境の美観と機能を追求した
+              建築的視点でのエアコン設置をご提案します。
+              第二種電気工事士が責任を持って施工します。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-lg flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container px-10 py-5 font-bold font-label hover:brightness-110 transition-all"
               >
-                <span className="material-symbols-outlined">calendar_today</span>
                 無料見積もりを依頼する
               </Link>
               <a
                 href="tel:050-5536-8619"
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white px-10 py-5 font-bold font-label hover:bg-white/20 transition-all"
               >
-                <span className="material-symbols-outlined">call</span>
+                <span className="material-symbols-outlined text-sm">call</span>
                 050-5536-8619
               </a>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* ── Overview ── */}
-      <section className="py-24 bg-surface">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            {/* 3 reasons */}
-            <div className="relative">
-              <div className="relative bg-surface-container-lowest p-8 rounded-2xl border-l-8 border-secondary-container">
-                <h2 className="text-3xl font-headline font-extrabold text-primary mb-6">
-                  選ばれる3つの理由
-                </h2>
-                <ul className="space-y-8">
-                  {reasons.map((r) => (
-                    <li key={r.num} className="flex gap-4">
-                      <span className="flex-shrink-0 w-10 h-10 bg-primary-container text-white rounded-lg flex items-center justify-center font-black text-sm">
-                        {r.num}
-                      </span>
-                      <div>
-                        <h3 className="font-bold text-lg mb-1">{r.title}</h3>
-                        <p className="text-on-surface-variant text-sm leading-relaxed">{r.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Description */}
-            <div className="space-y-6">
-              <span className="text-sm font-bold text-secondary-container tracking-widest uppercase font-label">
-                Service Overview
-              </span>
-              <h3 className="text-4xl font-headline font-black text-primary leading-snug">
-                プロの技術で、
-                <br />
-                冷暖房効率を最大化。
-              </h3>
-              <p className="text-on-surface-variant leading-loose">
-                エアコンの寿命や効きは、取り付けの精度で大きく変わります。ライフチェンジでは、真空引き作業の徹底はもちろん、お部屋の美観を損なわない化粧カバーの提案など、お客様一人ひとりの住環境に合わせた最適な施工プランをご提案いたします。
-              </p>
-              <div className="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
-                <div className="flex-shrink-0 w-16 h-16 bg-white rounded-full flex items-center justify-center text-secondary-container">
-                  <span
-                    className="material-symbols-outlined text-3xl"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    verified
-                  </span>
-                </div>
-                <div>
-                  <p className="font-bold text-primary">第二種電気工事士 在籍店</p>
-                  <p className="text-xs text-on-surface-variant">
-                    法令に基づいた安全な電気工事を実施いたします。
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── Pricing ── */}
-      <section className="py-24 bg-surface-container-low">
+      <section className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-headline font-black text-primary mb-4">料金プラン</h2>
-            <div className="w-20 h-1 bg-secondary-container mx-auto" />
+          <div className="mb-16">
+            <span className="font-label text-secondary-container text-sm font-bold tracking-widest block mb-2 uppercase">
+              Pricing
+            </span>
+            <h2 className="text-4xl font-black font-headline">標準工事料金</h2>
+            <p className="text-sm text-on-surface-variant mt-3">
+              ※ 表示金額はすべて税込。現場状況により変動します。必ず事前に無料見積もりをご確認ください。
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* 基本工事 */}
-            <div className="bg-surface-container-lowest rounded-2xl overflow-hidden">
-              <div className="bg-primary text-white px-8 py-6">
-                <h3 className="text-xl font-bold">基本工事費</h3>
-                <p className="text-sm opacity-70">標準的な取付作業一式が含まれます</p>
-              </div>
-              <div className="p-8">
-                <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-4xl font-black text-primary">¥18,480</span>
-                  <span className="text-on-surface-variant text-sm font-bold">（税込）〜</span>
+
+          <div className="space-y-px">
+            {standardPrices.map((item, i) => (
+              <div
+                key={i}
+                className="bg-surface-container-lowest p-8 grid md:grid-cols-[1fr_auto] items-center gap-6 group hover:bg-surface-container-low transition-colors"
+              >
+                <div>
+                  <h3 className="text-lg font-bold text-primary mb-1">{item.name}</h3>
+                  <p className="text-sm text-on-surface-variant">{item.note}</p>
                 </div>
-                <ul className="space-y-4">
-                  {[
-                    '室内機・室外機の設置',
-                    '配管類（4mまで）',
-                    '配管穴あけ（1箇所）',
-                    '真空引き作業一式',
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-on-surface-variant">
-                      <span className="material-symbols-outlined text-secondary-container text-xl">
-                        check_circle
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-right shrink-0">
+                  <span className="font-headline text-4xl font-black text-primary">{item.price}</span>
+                  <span className="text-sm font-bold ml-1 text-on-surface-variant">円〜</span>
+                </div>
               </div>
+            ))}
+
+            <div className="pt-10 pb-4">
+              <span className="font-label text-on-surface-variant text-xs tracking-widest font-bold uppercase">
+                Outdoor Unit Special Installation
+              </span>
+              <div className="mt-2 h-px bg-outline-variant/30" />
             </div>
 
-            {/* 追加工事 */}
-            <div className="bg-surface-container-lowest rounded-2xl overflow-hidden border border-outline-variant/30">
-              <div className="bg-surface-container-high px-8 py-6">
-                <h3 className="text-xl font-bold text-primary">追加工事費</h3>
-                <p className="text-sm text-on-surface-variant">設置状況に応じたオプション</p>
-              </div>
-              <div className="p-8">
-                <dl className="space-y-4">
-                  {[
-                    { label: '屋根置工事', price: '¥14,300〜' },
-                    { label: '壁面工事', price: '¥14,300〜' },
-                    { label: '天吊工事', price: '¥14,300〜' },
-                    { label: '二段置工事', price: '¥19,800〜' },
-                    { label: '既存機取り外し', price: '¥4,400〜' },
-                    { label: '屋外化粧カバー（2m）', price: '¥5,500〜' },
-                  ].map((opt) => (
-                    <div
-                      key={opt.label}
-                      className="flex justify-between items-center py-2 border-b border-surface-container-high"
-                    >
-                      <dt className="font-medium">{opt.label}</dt>
-                      <dd className="font-bold text-primary">{opt.price}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className="mt-6 text-xs text-on-surface-variant">
-                  ※現場の状況により価格が変動する場合がございます。正確な費用は現地調査後に確定いたします。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Flow ── */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-3xl font-headline font-black text-primary text-center mb-16">
-            施工までの流れ
-          </h2>
-          <div className="relative">
-            <div className="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-surface-container-high z-0" />
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
-              {steps.map((s) => (
-                <div key={s.step} className="text-center group">
-                  <div
-                    className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 ${
-                      s.accent ? 'bg-secondary-container text-white' : 'bg-primary text-white'
-                    }`}
-                  >
-                    <span className="material-symbols-outlined text-3xl">{s.icon}</span>
-                  </div>
-                  <h4 className="font-bold text-lg mb-2 text-primary">
-                    {s.step}. {s.title}
-                  </h4>
-                  <p className="text-sm text-on-surface-variant">{s.desc}</p>
+            {outdoorPrices.map((item, i) => (
+              <div
+                key={i}
+                className="bg-surface-container-lowest p-8 grid md:grid-cols-[1fr_auto] items-center gap-6 hover:bg-surface-container-low transition-colors"
+              >
+                <div>
+                  <h3 className="text-base font-bold text-primary mb-1">{item.name}</h3>
+                  {item.note && (
+                    <p className="text-xs text-on-surface-variant/70">{item.note}</p>
+                  )}
                 </div>
-              ))}
-            </div>
+                <div className="text-right shrink-0">
+                  <span className="font-headline text-3xl font-black text-primary">{item.price}</span>
+                  <span className="text-sm font-bold ml-1 text-on-surface-variant">円〜</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -262,103 +190,160 @@ export default function AirconPage() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-4xl font-headline font-black text-primary">施工実績</h2>
-              <p className="text-on-surface-variant mt-2">松戸・流山エリアでの施工例をご紹介します</p>
+              <span className="font-label text-secondary-container text-sm font-bold tracking-widest block mb-2 uppercase">
+                Case Studies
+              </span>
+              <h2 className="text-4xl font-black font-headline">施工事例</h2>
             </div>
             <Link
               href="/works"
-              className="hidden md:flex items-center gap-2 text-primary font-bold hover:text-secondary-container transition-colors"
+              className="font-label text-sm font-bold border-b-2 border-primary pb-1 hover:text-secondary-container hover:border-secondary-container transition-all hidden md:block"
             >
-              実績一覧を見る
-              <span className="material-symbols-outlined">arrow_forward</span>
+              全ての施工実績を見る
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:h-[600px]">
-            {/* Main image */}
-            <div className="md:col-span-8 relative rounded-2xl overflow-hidden group h-64 md:h-auto">
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:h-[600px]">
+            <div className="md:col-span-7 relative group overflow-hidden min-h-[320px]">
               <Image
-                src="/images/works-bento-main.jpg"
-                alt="マンションへのエアコン設置施工事例"
+                src="/images/aircon-case-01.jpg"
+                alt="新築一戸建てのリビングと寝室へのマルチ型エアコン設置施工事例"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end">
-                <span className="text-secondary-container font-bold text-sm">松戸市 T様邸</span>
-                <h4 className="text-white text-xl font-bold">新築戸建てへのマルチエアコン設置</h4>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8">
+                <span className="text-white/60 text-xs mb-2 font-label tracking-widest uppercase">Residential</span>
+                <h3 className="text-white text-2xl font-black font-headline leading-tight">
+                  新築一戸建て：<br />リビング・寝室へのマルチ型設置
+                </h3>
               </div>
             </div>
-            {/* Side images */}
-            <div className="md:col-span-4 grid grid-rows-2 gap-6">
-              {[
-                {
-                  src: '/images/works-bento-02.jpg',
-                  alt: 'マンションベランダへのエアコン室外機設置',
-                  city: '流山市 S様邸',
-                  label: 'マンション・ベランダ設置',
-                },
-                {
-                  src: '/images/works-bento-03.jpg',
-                  alt: '業務用エアコン入替工事',
-                  city: '松戸市 K様邸',
-                  label: '業務用エアコン入替工事',
-                },
-              ].map((img) => (
-                <div key={img.src} className="relative rounded-2xl overflow-hidden group h-48 md:h-auto">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                    <span className="text-secondary-container font-bold text-xs">{img.city}</span>
-                    <h4 className="text-white text-lg font-bold">{img.label}</h4>
-                  </div>
-                </div>
-              ))}
+
+            <div className="md:col-span-5 relative group overflow-hidden min-h-[260px]">
+              <Image
+                src="/images/aircon-case-02.jpg"
+                alt="マンションのエアコン室外機配置・個別温度制御対応の施工事例"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8">
+                <span className="text-white/60 text-xs mb-2 font-label tracking-widest uppercase">Apartment</span>
+                <h3 className="text-white text-xl font-black font-headline leading-tight">
+                  マンション：<br />室外機配置・個別温度制御対応
+                </h3>
+              </div>
+            </div>
+
+            <div className="md:col-span-12 relative group overflow-hidden h-[260px] md:h-auto">
+              <Image
+                src="/images/aircon-case-03.jpg"
+                alt="旧エアコン撤去・省エネモデルへの機器入替施工事例"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-8">
+                <span className="text-white/60 text-xs mb-2 font-label tracking-widest uppercase">Replacement</span>
+                <h3 className="text-white text-2xl font-black font-headline">
+                  機器入替：旧機撤去・省エネモデルへ交換
+                </h3>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ── Why choose us ── */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="mb-16">
+            <span className="font-label text-secondary-container text-sm font-bold tracking-widest block mb-2 uppercase">
+              Why Choose Us
+            </span>
+            <h2 className="text-4xl font-black font-headline">選ばれる理由</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/20">
+            {[
+              {
+                icon: 'verified',
+                title: '有資格プロによる施工',
+                body: '第二種電気工事士・第一種冷媒フロン類取扱技術者が施工。無資格業者に多い施工不良・ガス漏れのリスクがありません。',
+              },
+              {
+                icon: 'speed',
+                title: '最短当日対応',
+                body: '引越し当日のエアコン設置や急な故障にも対応。松戸市大橋拠点から迅速に駆けつけます。',
+              },
+              {
+                icon: 'recycling',
+                title: '旧機撤去・処分もワンストップ',
+                body: '古いエアコンの取外しから処分まで一括対応。フロン回収も適切に処理します。',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-surface-container-lowest p-10">
+                <span
+                  className="material-symbols-outlined text-3xl text-secondary-container mb-6 block"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  {item.icon}
+                </span>
+                <h3 className="font-bold text-primary text-lg mb-3">{item.title}</h3>
+                <p className="text-sm text-on-surface-variant leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-8">
-          <h2 className="text-3xl font-headline font-black text-primary text-center mb-16">
-            よくあるご質問
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group bg-surface-container-low rounded-xl overflow-hidden">
-                <summary className="flex justify-between items-center p-6 cursor-pointer font-bold text-primary group-open:bg-primary group-open:text-white transition-colors list-none">
-                  {faq.q}
-                  <span className="material-symbols-outlined transition-transform group-open:rotate-180 flex-shrink-0">
+      <section className="py-24 bg-surface-container-low">
+        <div className="max-w-3xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <span className="font-label text-secondary-container text-sm font-bold tracking-widest block mb-2 uppercase">
+              FAQ
+            </span>
+            <h2 className="text-4xl font-black font-headline">よくあるご質問</h2>
+          </div>
+          <div className="space-y-px">
+            {faqs.map((faq, i) => (
+              <details key={i} className="bg-surface-container-lowest group">
+                <summary className="flex justify-between items-center cursor-pointer p-6 gap-4">
+                  <span className="font-bold text-primary leading-snug">{faq.q}</span>
+                  <span className="material-symbols-outlined text-primary shrink-0 group-open:rotate-180 transition-transform">
                     expand_more
                   </span>
                 </summary>
-                <div className="p-6 text-on-surface-variant leading-relaxed">{faq.a}</div>
+                <p className="px-6 pb-6 text-sm text-on-surface-variant leading-relaxed border-t border-outline-variant/20 pt-4">
+                  {faq.a}
+                </p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Contact CTA ── */}
-      <section className="bg-primary text-white py-20 px-8 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-black font-headline mb-4">まずはお気軽にご相談ください。</h2>
-          <p className="text-white/70 mb-10">無料見積もり・現地調査、お電話にてお気軽にどうぞ。</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      {/* ── CTA ── */}
+      <section className="py-24 bg-primary text-white text-center">
+        <div className="max-w-4xl mx-auto px-8">
+          <span className="font-label text-secondary-container text-sm font-bold tracking-[0.4em] block mb-6 uppercase">
+            Transform Your Environment
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black font-headline mb-4 leading-tight">
+            快適な空間づくりを、<br />今すぐ始めましょう。
+          </h2>
+          <p className="text-on-primary-container leading-relaxed mb-10 max-w-lg mx-auto">
+            現地調査・お見積もりは無料。松戸市・流山市・柏市対応。
+          </p>
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
             <a
               href="tel:050-5536-8619"
-              className="flex items-center justify-center gap-2 bg-white text-primary px-10 py-4 rounded-xl font-black text-lg hover:bg-surface-container-low transition-all"
+              className="inline-flex items-center justify-center gap-3 bg-white text-primary px-12 py-5 font-bold font-label hover:bg-surface-container-low transition-all"
             >
               <span className="material-symbols-outlined">call</span>
               050-5536-8619
             </a>
             <Link
               href="/contact"
-              className="flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all"
+              className="inline-flex items-center justify-center gap-3 bg-secondary-container text-on-secondary-container px-12 py-5 font-bold font-label hover:brightness-110 transition-all"
             >
               <span className="material-symbols-outlined">mail</span>
               無料見積もりを依頼する
@@ -367,21 +352,21 @@ export default function AirconPage() {
         </div>
       </section>
 
-      {/* ── Sticky Mobile CTA ── */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/90 backdrop-blur-lg p-4 grid grid-cols-2 gap-4 shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+      {/* ── Mobile sticky CTA ── */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex">
         <a
           href="tel:050-5536-8619"
-          className="flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl font-bold"
+          className="flex-1 flex flex-col items-center justify-center gap-0.5 bg-primary text-white py-3 font-label font-bold text-sm"
         >
-          <span className="material-symbols-outlined">call</span>
+          <span className="material-symbols-outlined text-base">call</span>
           電話で相談
         </a>
         <Link
           href="/contact"
-          className="flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container py-3 rounded-xl font-bold"
+          className="flex-1 flex flex-col items-center justify-center gap-0.5 bg-secondary-container text-on-secondary-container py-3 font-label font-bold text-sm"
         >
-          <span className="material-symbols-outlined">mail</span>
-          無料見積り
+          <span className="material-symbols-outlined text-base">mail</span>
+          見積もり依頼
         </Link>
       </div>
     </>
