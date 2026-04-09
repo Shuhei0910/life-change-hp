@@ -74,8 +74,9 @@ export default function WorksPage() {
               施工実績
             </h1>
             <p className="text-on-primary-container text-lg leading-relaxed max-w-xl">
-              年間4,000台を超える施工実績の一部をご紹介します。
-              戸建て・マンション・緊急対応など、さまざまな現場に対応してきました。
+              年間4,000台を超える施工実績の一部をご紹介します。<br />
+              戸建て・マンション・緊急対応など、<br />
+              さまざまな現場に対応してきました。
             </p>
           </div>
         </div>
