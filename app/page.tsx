@@ -42,16 +42,40 @@ const areas = [
 
 const reviews = [
   {
-    text: '「エアコンの取り付けをお願いしました。作業がとても丁寧で、説明も分かりやすかったです。また何かあればお願いしたいです。」',
-    name: '松戸市 K様',
+    service: 'エアコン取付',
+    text: '引越し当日にエアコン取付をお願いしました。他社に「当日は無理」と断られ焦っていたところ、すぐに対応してもらえて本当に助かりました。1時間半ほどで完了し、配管の仕上げも壁に沿って綺麗にまとめてくれました。',
+    name: 'S様',
+    profile: '30代・女性・松戸市',
   },
   {
-    text: '「急な給湯器の故障で困っていましたが、迅速に対応していただき助かりました。当日に見積もりから工事まで完了しました。」',
-    name: '流山市 S様',
+    service: '給湯器交換',
+    text: '冬の朝にお湯が出なくなり、慌てて連絡しました。午後には新しい給湯器に交換されていて、夜には普通に使えました。事前の見積もりも明確で、追加費用は一切ありませんでした。対応の速さと丁寧さに感謝しています。',
+    name: 'T様',
+    profile: '50代・男性・松戸市',
   },
   {
-    text: '「コンロの交換をお願いしました。養生もしっかりしていて、後片付けも綺麗で感動しました。信頼できる業者さんです。」',
-    name: '柏市 M様',
+    service: 'コンロ交換',
+    text: 'ビルトインコンロの交換を依頼しました。問い合わせから3日で工事完了。当日は養生もしっかりしてくれて、コンロ周りを傷つけることなく交換してもらいました。使い方の説明まで丁寧にしてもらい、とても安心できる業者さんです。',
+    name: 'S様',
+    profile: '40代・女性・柏市',
+  },
+  {
+    service: 'エアコン3台取付',
+    text: 'リビング・寝室・ロフトと3台まとめて取り付けをお願いしました。ロフトへの設置は「難しい」と言われることもあるのですが、段取りよく綺麗に仕上げてくれました。料金も相場より良心的で、次の機会もぜひお願いしたいと思っています。',
+    name: 'S様',
+    profile: '40代・男性・流山市',
+  },
+  {
+    service: '換気扇・エアコン撤去',
+    text: '換気扇の交換と古いエアコンの取外し・処分をセットでお願いしました。処分まで一括でやってもらえるので、自分で粗大ゴミの手続きをしなくて済み楽でした。作業後はゴミ一つ残さず片付けてくれて、対応全体に好感が持てました。',
+    name: 'D様',
+    profile: '30代・女性・松戸市',
+  },
+  {
+    service: '給湯器号数アップ',
+    text: '家族が増えてお湯が足りなくなり、号数アップの相談をしました。現場を確認したうえで配管状況や費用をわかりやすく説明してもらい、納得したうえで工事を進めてもらえました。正直ベースで話してくれる業者さんで信頼できます。',
+    name: 'Y様',
+    profile: '40代・男性・流山市',
   },
 ]
 
@@ -133,22 +157,22 @@ export default function HomePage() {
       </section>
 
       {/* ── Stats Bar ── */}
-      <section className="bg-surface-container-lowest relative z-20 -mt-12 mx-4 md:mx-auto max-w-5xl rounded-xl shadow-2xl overflow-hidden">
-        <div className="grid grid-cols-2 md:grid-cols-4 py-8 px-4">
+      <section className="bg-primary border-b border-white/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
             { label: '年間施工台数', value: '4,000台', unit: '以上' },
-            { label: '対応エリア', value: '3市', unit: '' },
+            { label: '対応エリア', value: '松戸 / 流山 / 柏', unit: '' },
             { label: '創業', value: '2020年', unit: '' },
-            { label: '保有資格', value: '複数', unit: '' },
+            { label: '第二種電気工事士', value: '有資格', unit: '施工' },
           ].map((stat, i) => (
             <div
               key={i}
-              className="text-center border-r-0 md:border-r border-outline-variant/30 last:border-0 py-4"
+              className="text-center border-r border-white/10 last:border-r-0 py-6 px-4"
             >
-              <div className="text-xs text-on-primary-container mb-1 font-label">
+              <div className="text-xs text-white/40 mb-2 font-label tracking-widest uppercase">
                 {stat.label}
               </div>
-              <div className="text-2xl md:text-3xl font-black text-primary font-headline">
+              <div className="text-2xl md:text-3xl font-black text-white font-headline">
                 {stat.value}
                 {stat.unit && (
                   <span className="text-sm font-bold ml-1 text-secondary-container">
@@ -260,27 +284,44 @@ export default function HomePage() {
       {/* ── Reviews ── */}
       <section className="py-24 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-4xl font-black font-headline mb-16 text-center">
-            お客様の声
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {reviews.map((r) => (
-              <div key={r.name} className="bg-primary-container p-8 rounded-xl">
-                <div className="flex text-orange-400 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span
-                      key={i}
-                      className="material-symbols-outlined"
-                      style={{ fontVariationSettings: "'FILL' 1" }}
-                    >
-                      star
-                    </span>
-                  ))}
+          <div className="text-center mb-16">
+            <span className="font-label text-secondary-container text-sm font-bold tracking-widest block mb-3 uppercase">
+              Customer Reviews
+            </span>
+            <h2 className="text-4xl font-black font-headline">
+              お客様の声
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+            {reviews.map((r, i) => (
+              <div key={i} className="bg-primary p-8 flex flex-col gap-5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-secondary-container font-label tracking-widest uppercase">
+                    {r.service}
+                  </span>
+                  <div className="flex text-secondary-container">
+                    {[...Array(5)].map((_, j) => (
+                      <span
+                        key={j}
+                        className="material-symbols-outlined text-sm"
+                        style={{ fontVariationSettings: "'FILL' 1" }}
+                      >
+                        star
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-sm leading-relaxed mb-6">{r.text}</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-white/20" />
-                  <span className="text-sm font-bold">{r.name}</span>
+                <p className="text-white/80 text-sm leading-relaxed flex-1">
+                  {r.text}
+                </p>
+                <div className="border-t border-white/10 pt-5 flex items-center gap-3">
+                  <div className="w-8 h-8 bg-white/10 flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-sm text-white/50">person</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm">{r.name}</p>
+                    <p className="text-xs text-white/40">{r.profile}</p>
+                  </div>
                 </div>
               </div>
             ))}
