@@ -134,7 +134,7 @@ export default function CampPage() {
         <section>
           <div className="mb-12">
             <span className="text-[#2d5a2d] font-black tracking-widest text-sm uppercase block mb-3 font-label">Features</span>
-            <h2 className="text-4xl font-black text-primary font-headline">キャンプ場の設備・特徴</h2>
+            <h2 className="text-4xl font-black text-primary font-headline">キャンプ場の<br className="sm:hidden" />設備・特徴</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant/20">
             {features.map((f, i) => (

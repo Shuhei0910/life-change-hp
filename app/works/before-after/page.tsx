@@ -80,7 +80,7 @@ export default function BeforeAfterPage() {
             <span className="inline-block px-4 py-1 bg-secondary-container/10 text-secondary-container font-bold text-xs mb-4 tracking-widest uppercase font-label">
               Before / After
             </span>
-            <h1 className="text-5xl md:text-6xl font-black text-white font-headline leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white font-headline leading-tight mb-6">
               ビフォーアフター<br />施工事例
             </h1>
             <p className="text-on-primary-container text-lg leading-relaxed max-w-xl">
@@ -217,7 +217,7 @@ export default function BeforeAfterPage() {
         {/* CTA */}
         <section className="bg-primary text-white p-10 md:p-16 text-center">
           <h2 className="text-3xl font-black font-headline mb-4">
-            あなたのお宅もお任せください
+            あなたのお宅も<br className="sm:hidden" />お任せください
           </h2>
           <p className="text-on-primary-container mb-8 max-w-lg mx-auto leading-relaxed">
             現地調査・お見積もりは無料です。松戸市・流山市・柏市対応。

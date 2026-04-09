@@ -330,8 +330,9 @@ export default function AirconPage() {
           <span className="font-label text-secondary-container text-sm font-bold tracking-[0.4em] block mb-6 uppercase">
             Transform Your Environment
           </span>
-          <h2 className="text-4xl md:text-5xl font-black font-headline mb-4 leading-tight">
-            快適な空間づくりを、<br />今すぐ始めましょう。
+          <h2 className="text-[28px] sm:text-4xl md:text-5xl font-black font-headline mb-4 leading-tight">
+            <span className="block">快適な空間づくりを、</span>
+            <span className="block">今すぐ始めましょう。</span>
           </h2>
           <p className="text-on-primary-container leading-relaxed mb-10 max-w-lg mx-auto">
             現地調査・お見積もりは無料。松戸市・流山市・柏市対応。

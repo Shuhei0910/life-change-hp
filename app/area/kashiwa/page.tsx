@@ -98,7 +98,7 @@ export default function KashiwaPage() {
 
         {/* CTA */}
         <section className="bg-primary text-white rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-black font-headline mb-4">柏市のお客様、お気軽にどうぞ</h2>
+          <h2 className="text-3xl font-black font-headline mb-4">柏市のお客様、<br className="sm:hidden" />お気軽にどうぞ</h2>
           <p className="text-on-primary-container mb-8 leading-relaxed">現地調査・お見積もりは無料です。</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container px-10 py-4 rounded-xl font-bold hover:brightness-110 transition-all">

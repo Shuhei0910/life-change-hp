@@ -98,7 +98,7 @@ export default function AreaPage() {
         <section className="bg-surface-container-low rounded-2xl p-10 md:p-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-black text-primary font-headline mb-4">千葉県全域・東京都一部にも対応</h2>
+              <h2 className="text-3xl font-black text-primary font-headline mb-4">千葉県全域・<br className="sm:hidden" />東京都一部にも対応</h2>
               <p className="text-on-surface-variant leading-relaxed mb-6">
                 上記3市以外のエリアも対応できる場合があります。<br />
                 出張費が異なる場合がありますが、まずはお電話または<br />

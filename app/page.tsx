@@ -128,9 +128,9 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-2xl">
-            <h1 className="text-2xl sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6 font-headline text-shadow-premium">
-              エアコン・給湯器取付は、<br />
-              <span className="text-secondary-container">ライフチェンジ</span>にお任せ。
+            <h1 className="text-[21px] sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6 font-headline text-shadow-premium">
+              <span className="block">エアコン・給湯器取付は、</span>
+              <span className="block"><span className="text-secondary-container">ライフチェンジ</span>にお任せ。</span>
             </h1>
             <p className="text-lg md:text-xl text-white font-bold mb-3 font-headline leading-snug">
               あなたの家に来るのは、<br className="sm:hidden" />
@@ -194,7 +194,7 @@ export default function HomePage() {
             OUR SERVICES
           </span>
           <h2 className="text-4xl font-black text-primary font-headline mb-4 leading-tight">
-            暮らしを支える、確かな技術。
+            暮らしを支える、<br />確かな技術。
           </h2>
           <p className="text-on-surface-variant leading-relaxed max-w-xl">
             私たちはエアコンや給湯器の設置を通じて、<br />
@@ -239,7 +239,7 @@ export default function HomePage() {
               Our Promise
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-white font-headline">
-              ライフチェンジの3つのお約束
+              ライフチェンジの<br className="sm:hidden" />3つのお約束
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">

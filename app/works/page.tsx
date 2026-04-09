@@ -179,7 +179,7 @@ export default function WorksPage() {
         {/* CTA */}
         <div className="mt-8 bg-primary text-white rounded-2xl p-12 text-center">
           <h2 className="text-3xl font-black font-headline mb-4">
-            あなたのお宅もお任せください
+            あなたのお宅も<br className="sm:hidden" />お任せください
           </h2>
           <p className="text-on-primary-container mb-8 max-w-lg mx-auto leading-relaxed">
             現地調査・お見積もりは無料です。
