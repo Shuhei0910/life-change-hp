@@ -55,6 +55,34 @@ const faqs = [
 export default function ConroPage() {
   return (
     <>
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: 'ガスコンロ・IHクッキングヒーター取付工事',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: '合同会社ライフチェンジ',
+              telephone: '050-5536-8619',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '大橋1108番地4',
+                addressLocality: '松戸市',
+                addressRegion: '千葉県',
+                postalCode: '270-2224',
+                addressCountry: 'JP',
+              },
+            },
+            description: '松戸市・流山市・柏市のガスコンロ・IH取付。電気工事士によるワンストップ対応。¥13,200〜。',
+            areaServed: ['松戸市', '流山市', '柏市'],
+            priceRange: '¥13,200〜',
+          }),
+        }}
+      />
+
       {/* Hero */}
       <header className="pt-32 pb-20 bg-gradient-to-br from-primary to-primary-container relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 relative z-10">

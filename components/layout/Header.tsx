@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const navLinks = [
-  { href: '/service/aircon', label: 'サービス内容' },
+  { href: '/service', label: 'サービス一覧' },
   { href: '/works', label: '施工実績' },
   { href: '/about', label: '会社概要' },
   { href: '/contact', label: 'お問い合わせ' },
@@ -38,7 +38,7 @@ export default function Header() {
 
         <a
           href="tel:050-5536-8619"
-          className="hidden lg:flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-2.5 rounded-xl font-bold hover:brightness-110 transition-all"
+          className="hidden lg:flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-2.5 font-bold hover:brightness-110 transition-all"
         >
           <span className="material-symbols-outlined text-sm">call</span>
           電話でお問い合わせ
@@ -69,9 +69,16 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/camp"
+            className="block font-bold text-primary/60 py-2 hover:text-secondary-container transition-colors text-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            みんなの里山キャンプ場
+          </Link>
           <a
             href="tel:050-5536-8619"
-            className="flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-3 rounded-xl font-bold"
+            className="flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-3 font-bold"
           >
             <span className="material-symbols-outlined text-sm">call</span>
             050-5536-8619

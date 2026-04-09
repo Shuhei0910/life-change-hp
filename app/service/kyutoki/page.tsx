@@ -62,6 +62,34 @@ const faqs = [
 export default function KyutokiPage() {
   return (
     <>
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: '給湯器取付・交換工事',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: '合同会社ライフチェンジ',
+              telephone: '050-5536-8619',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '大橋1108番地4',
+                addressLocality: '松戸市',
+                addressRegion: '千葉県',
+                postalCode: '270-2224',
+                addressCountry: 'JP',
+              },
+            },
+            description: '松戸市・流山市・柏市の給湯器交換・取付。最短当日対応。¥55,000〜。給水装置工事主任技術者による確実な施工。',
+            areaServed: ['松戸市', '流山市', '柏市'],
+            priceRange: '¥55,000〜',
+          }),
+        }}
+      />
+
       {/* Hero */}
       <header className="pt-32 pb-20 bg-gradient-to-br from-primary to-primary-container relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-8 relative z-10">
