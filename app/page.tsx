@@ -129,8 +129,8 @@ export default function HomePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-2xl">
             <h1 className="text-[21px] sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6 font-headline text-shadow-premium">
-              <span className="block">エアコン・給湯器取付は、</span>
-              <span className="block"><span className="text-secondary-container">ライフチェンジ</span>にお任せ。</span>
+              <span className="block whitespace-nowrap">エアコン・給湯器取付は、</span>
+              <span className="block whitespace-nowrap"><span className="text-secondary-container">ライフチェンジ</span>にお任せ。</span>
             </h1>
             <p className="text-lg md:text-xl text-white font-bold mb-3 font-headline leading-snug">
               あなたの家に来るのは、<br className="sm:hidden" />
