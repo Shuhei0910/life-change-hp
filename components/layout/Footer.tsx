@@ -58,6 +58,7 @@ export default function Footer() {
           <ul className="space-y-3">
             {[
               { href: '/works', label: '施工実績' },
+              { href: '/works/before-after', label: 'ビフォーアフター' },
               { href: '/about', label: '会社概要' },
               { href: '/about/qualification', label: '保有資格・許可' },
               { href: '/area', label: '対応エリア' },

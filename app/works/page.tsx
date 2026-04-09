@@ -152,8 +152,31 @@ export default function WorksPage() {
           ))}
         </div>
 
+        {/* Before/After CTA */}
+        <div className="mt-16 bg-surface-container-low p-8 flex flex-col md:flex-row items-center gap-6 justify-between">
+          <div className="flex items-center gap-5">
+            <span
+              className="material-symbols-outlined text-3xl text-secondary-container shrink-0"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+            >
+              compare
+            </span>
+            <div>
+              <h3 className="font-bold text-primary text-lg">ビフォーアフターで見る施工事例</h3>
+              <p className="text-sm text-on-surface-variant mt-1">設置前・設置後を比較して、工事の仕上がりをご確認いただけます。</p>
+            </div>
+          </div>
+          <Link
+            href="/works/before-after"
+            className="shrink-0 inline-flex items-center gap-2 bg-primary text-white px-8 py-3 font-bold hover:brightness-110 transition-all"
+          >
+            ビフォーアフターを見る
+            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          </Link>
+        </div>
+
         {/* CTA */}
-        <div className="mt-20 bg-primary text-white rounded-2xl p-12 text-center">
+        <div className="mt-8 bg-primary text-white rounded-2xl p-12 text-center">
           <h2 className="text-3xl font-black font-headline mb-4">
             あなたのお宅もお任せください
           </h2>

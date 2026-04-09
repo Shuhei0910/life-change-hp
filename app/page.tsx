@@ -134,7 +134,11 @@ export default function HomePage() {
               <span className="text-secondary-container">ライフチェンジ</span>
               にお任せ。
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-10 font-medium tracking-wide">
+            <p className="text-lg md:text-xl text-white font-bold mb-3 font-headline leading-snug">
+              あなたの家に来るのは、<br className="sm:hidden" />
+              電気工事士の資格を持つ職人です。
+            </p>
+            <p className="text-sm text-white/60 mb-10 font-label tracking-wide">
               松戸市・流山市・柏市対応 ｜ 年間4,000台以上の施工実績
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -225,6 +229,60 @@ export default function HomePage() {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── 3つのお約束 ── */}
+      <section className="bg-primary">
+        <div className="max-w-7xl mx-auto px-8 py-16">
+          <div className="text-center mb-12">
+            <span className="font-label text-secondary-container text-sm font-bold tracking-widest block mb-3 uppercase">
+              Our Promise
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-white font-headline">
+              ライフチェンジの3つのお約束
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
+            {[
+              {
+                icon: 'cancel',
+                num: '01',
+                title: '見積もり後のキャンセル、無料',
+                body: '現地調査・お見積もりは完全無料。金額を見てからキャンセルしても、一切費用はかかりません。',
+              },
+              {
+                icon: 'receipt_long',
+                num: '02',
+                title: '追加費用は必ず事前に説明',
+                body: '作業中に追加費用が生じる場合は、必ず一度手を止めてご説明し、ご了承いただいてから進めます。',
+              },
+              {
+                icon: 'shield',
+                num: '03',
+                title: '施工後1年間の工事保証',
+                body: '当社の施工に起因する不具合は、工事完了後1年以内であれば無償で対応いたします。',
+              },
+            ].map((p, i) => (
+              <div key={i} className="bg-primary-container p-10">
+                <div className="flex items-start gap-5">
+                  <span className="font-headline text-5xl font-black text-secondary-container/30 leading-none shrink-0">
+                    {p.num}
+                  </span>
+                  <div>
+                    <span
+                      className="material-symbols-outlined text-secondary-container mb-4 block"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      {p.icon}
+                    </span>
+                    <h3 className="font-bold text-white text-lg mb-3 leading-snug">{p.title}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed">{p.body}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
