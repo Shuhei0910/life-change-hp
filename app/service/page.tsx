@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -45,11 +46,11 @@ const services = [
   },
 ]
 
-const points = [
-  { icon: 'verified', title: '有資格プロが施工', body: '第二種電気工事士など国家資格保有者が担当' },
-  { icon: 'speed', title: '最短当日対応', body: '急なトラブルにも松戸市拠点から迅速対応' },
-  { icon: 'receipt_long', title: '明朗会計', body: '事前見積もり必須。追加費用は必ずご確認後' },
-  { icon: 'recycling', title: '旧機器処分まで', body: '取外し〜処分までワンストップ対応' },
+const points: { icon: string; title: string; body: React.ReactNode }[] = [
+  { icon: 'verified', title: '有資格プロが施工', body: <>第二種電気工事士など<br />国家資格保有者が担当</> },
+  { icon: 'speed', title: '最短当日対応', body: <>急なトラブルにも<br />松戸市拠点から迅速対応</> },
+  { icon: 'receipt_long', title: '明朗会計', body: <>事前見積もり必須。<br />追加費用は必ずご確認後</> },
+  { icon: 'recycling', title: '旧機器処分まで', body: <>取外し〜処分まで<br />ワンストップ対応</> },
 ]
 
 export default function ServicePage() {
