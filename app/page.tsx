@@ -128,7 +128,7 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-2xl">
-            <h1 className="text-[21px] sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6 font-headline text-shadow-premium">
+            <h1 className="text-[21px] sm:text-5xl md:text-6xl font-black text-white leading-tight mb-6 font-headline text-shadow-premium">
               <span className="block whitespace-nowrap">エアコン・給湯器取付は、</span>
               <span className="block whitespace-nowrap"><span className="text-secondary-container">ライフチェンジ</span>にお任せ。</span>
             </h1>
@@ -263,7 +263,7 @@ export default function HomePage() {
                 body: '当社の施工に起因する不具合は、工事完了後1年以内であれば無償で対応いたします。',
               },
             ].map((p, i) => (
-              <div key={i} className="bg-primary-container p-10">
+              <div key={i} className="bg-white p-10 shadow-lg rounded-sm">
                 <div className="flex items-start gap-5">
                   <span className="font-headline text-5xl font-black text-secondary-container/30 leading-none shrink-0">
                     {p.num}
@@ -275,8 +275,8 @@ export default function HomePage() {
                     >
                       {p.icon}
                     </span>
-                    <h3 className="font-bold text-white text-lg mb-3 leading-snug">{p.title}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed">{p.body}</p>
+                    <h3 className="font-bold text-primary text-lg mb-3 leading-snug">{p.title}</h3>
+                    <p className="text-on-surface-variant text-sm leading-relaxed">{p.body}</p>
                   </div>
                 </div>
               </div>
@@ -339,19 +339,19 @@ export default function HomePage() {
       </section>
 
       {/* ── Reviews ── */}
-      <section className="py-24 bg-primary text-white">
+      <section className="py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <span className="font-label text-secondary-container text-sm font-bold tracking-widest block mb-3 uppercase">
               Customer Reviews
             </span>
-            <h2 className="text-4xl font-black font-headline">
+            <h2 className="text-4xl font-black font-headline text-primary">
               お客様の声
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {reviews.map((r, i) => (
-              <div key={i} className="bg-primary p-8 flex flex-col gap-5">
+              <div key={i} className="bg-[#fafaf8] p-8 flex flex-col gap-5 rounded-sm shadow-sm border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-secondary-container font-label tracking-widest uppercase">
                     {r.service}
@@ -368,16 +368,16 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed flex-1">
+                <p className="text-on-surface-variant text-sm leading-relaxed flex-1">
                   {r.text}
                 </p>
-                <div className="border-t border-white/10 pt-5 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/10 flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-sm text-white/50">person</span>
+                <div className="border-t border-outline-variant/30 pt-5 flex items-center gap-3">
+                  <div className="w-8 h-8 bg-surface-container-high flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-sm text-on-surface-variant">person</span>
                   </div>
                   <div>
-                    <p className="font-bold text-sm">{r.name}</p>
-                    <p className="text-xs text-white/40">{r.profile}</p>
+                    <p className="font-bold text-sm text-on-surface">{r.name}</p>
+                    <p className="text-xs text-on-surface-variant/70">{r.profile}</p>
                   </div>
                 </div>
               </div>

@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="text-lg font-bold text-secondary-container font-headline">
             合同会社ライフチェンジ
           </div>
-          <p className="text-white/70">
+          <p className="text-white/85">
             千葉県松戸市・流山市・柏市を中心に活動する<br />
             住宅設備工事の専門会社です。<br />
             エアコン、給湯器、コンロの設置ならお任せください。
@@ -28,7 +28,7 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <div className="font-bold text-xs text-white/40 uppercase tracking-widest mb-6">
+          <div className="font-bold text-xs text-white/70 uppercase tracking-widest mb-6">
             SERVICES
           </div>
           <ul className="space-y-3">
@@ -42,7 +42,7 @@ export default function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-white/70 hover:text-white transition-colors"
+                  className="text-white/85 hover:text-white transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -53,7 +53,7 @@ export default function Footer() {
 
         {/* Company links */}
         <div>
-          <div className="font-bold text-xs text-white/40 uppercase tracking-widest mb-6">
+          <div className="font-bold text-xs text-white/70 uppercase tracking-widest mb-6">
             COMPANY
           </div>
           <ul className="space-y-3">
@@ -71,7 +71,7 @@ export default function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-white/70 hover:text-white transition-colors"
+                  className="text-white/85 hover:text-white transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -82,10 +82,10 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <div className="font-bold text-xs text-white/40 uppercase tracking-widest mb-6">
+          <div className="font-bold text-xs text-white/70 uppercase tracking-widest mb-6">
             CONTACT
           </div>
-          <div className="space-y-3 text-white/70">
+          <div className="space-y-3 text-white/85">
             <p>
               〒270-2224<br />
               千葉県松戸市大橋1108番地4
@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
+      <div className="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/60 text-xs">
         <span>© 2024 合同会社ライフチェンジ All Rights Reserved.</span>
         <Link href="/privacy" className="hover:text-white/60 transition-colors">
           プライバシーポリシー
